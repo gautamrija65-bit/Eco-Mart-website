@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Rija Gautam | EcoMart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="index.html">EcoMart</a></h1>
+    </div>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="research.html">Research</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <div class="user-area">
+        <button onclick="window.location='research.html'">Research</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-hero">
+      <img class="profile-photo" src="Images/Profile%20Picture.jpeg" alt="Rija Gautam">
+      <div>
+        <h1>Rija Gautam</h1>
+        <p>Founder, product lead, and sustainability enthusiast focused on making everyday products greener and easier to buy.</p>
+        <div class="contact-cta">
+          <button id="contact-me" class="hero-cta">Contact Me</button>
+          <a href="research.html" class="btn-ghost">See Research</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-grid">
+      <h2>Elevator Pitch</h2>
+      <p>I build product experiences that help people switch to sustainable alternatives without friction. At EcoMart, we focus on convenience, transparency, and measurable impact.</p>
+
+      <h2>Experience & Timeline</h2>
+      <div class="timeline">
+        <div class="timeline-item"><strong>2022</strong> — Launched EcoMart with reusable essentials.</div>
+        <div class="timeline-item"><strong>2023</strong> — Grew to 10k customers and introduced subscription bundles.</div>
+        <div class="timeline-item"><strong>2025</strong> — Published first public sustainability report.</div>
+      </div>
+
+      <h2>What I Build</h2>
+      <ul>
+        <li>Product pages that highlight impact metrics</li>
+        <li>Subscription and refill UX</li>
+        <li>Transparent sourcing and packaging improvements</li>
+      </ul>
+
+      <h2>Values</h2>
+      <p>Honesty, measurable impact, and accessibility — we design products people actually use.</p>
+    </section>
+
+    <!-- Contact modal -->
+    <div id="contact-modal" class="modal hidden">
+      <div class="modal-content">
+        <button class="close" id="contact-close">×</button>
+        <h3>Contact Rija</h3>
+        <form id="contact-form">
+          <input id="contact-name" placeholder="Your name" required />
+          <input id="contact-email" type="email" placeholder="Your email" required />
+          <textarea id="contact-message" placeholder="Short message" rows="4" required></textarea>
+          <div style="margin-top:10px"><button type="submit" class="hero-cta">Send</button></div>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 EcoMart — Rija Gautam.</p>
+  </footer>
+
+  <script>
+    (function(){
+      const contactModal = document.getElementById('contact-modal');
+      document.getElementById('contact-me').addEventListener('click', ()=> contactModal.classList.remove('hidden'));
+      document.getElementById('contact-close').addEventListener('click', ()=> contactModal.classList.add('hidden'));
+      document.getElementById('contact-form').addEventListener('submit', (e)=>{
+        e.preventDefault(); alert('Thanks — I will get back to you soon.'); contactModal.classList.add('hidden');
+      });
+    })();
+  </script>
+</body>
+</html>

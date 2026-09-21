@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EcoMart — Products</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="index.html">EcoMart</a></h1>
+    </div>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search">
+        <input id="search" type="search" placeholder="Search products..." aria-label="Search products">
+      </div>
+      <div class="user-area">
+        <span id="welcome" class="hidden"></span>
+        <button id="btn-login">Login / Signup</button>
+        <button id="btn-logout" class="hidden">Logout</button>
+        <button id="btn-cart">Cart (<span id="cart-count">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="products-list" class="product-grid"></section>
+
+    <!-- Product detail modal -->
+    <div id="product-modal" class="modal hidden">
+      <div class="modal-content">
+        <button class="close" id="product-close">×</button>
+        <div class="product-detail">
+          <img id="product-img" src="" alt="" style="width:100%;height:200px;object-fit:cover;border-radius:6px">
+          <h3 id="product-title"></h3>
+          <div class="price" id="product-price"></div>
+          <p id="product-desc"></p>
+          <div class="product-actions">
+            <button id="product-add">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="auth-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close" id="auth-close">×</button>
+      <h2 id="auth-title">Login</h2>
+      <form id="auth-form">
+        <input id="auth-username" placeholder="Username" required />
+        <input id="auth-password" type="password" placeholder="Password" required />
+        <div class="auth-actions">
+          <button type="submit" id="auth-submit">Login</button>
+          <button type="button" id="switch-to-signup">Switch to Signup</button>
+        </div>
+      </form>
+      <div id="auth-message" class="auth-message"></div>
+    </div>
+  </div>
+
+  <div id="cart-modal" class="modal hidden">
+    <div class="modal-content wide">
+      <button class="close" id="cart-close">×</button>
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+      <div class="cart-summary">
+        <div>Total items: <span id="cart-total-items">0</span></div>
+        <div>Total price: $<span id="cart-total-price">0.00</span></div>
+        <button id="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <footer class="site-footer">
+    <p>&copy; 2026 EcoMart — Built with care for the planet.</p>
+  </footer>
+</body>
+</html>

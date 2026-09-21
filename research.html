@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EcoMart — Research & Insights</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1><a href="index.html">EcoMart</a></h1>
+    </div>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="research.html">Research</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search">
+        <input id="search" type="search" placeholder="Search research..." aria-label="Search research">
+      </div>
+      <div class="user-area">
+        <button onclick="window.location='about.html'">About</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" role="banner">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h2>Research & Insights</h2>
+          <p>Data-driven findings about our customers, products, and sustainable choices.</p>
+          <button class="hero-cta" id="subscribe-btn" data-tooltip="Subscribe for full reports">Get Reports</button>
+        </div>
+      </div>
+      <img class="hero-img" src="Images/EcoMart1.webp" alt="Research cover image">
+    </section>
+
+    <section class="tldr">
+      <h2>TL;DR</h2>
+      <ul>
+        <li>Reusable products grew 24% YoY across our store.</li>
+        <li>Conversion improved when product details included sustainability notes.</li>
+        <li>Top customers prefer low-cost daily-use sustainable items.</li>
+      </ul>
+    </section>
+
+    <section class="metrics">
+      <h2>Key Metrics</h2>
+      <div class="metrics-grid">
+        <div class="metric-card"><div class="num">24%</div><div class="muted">YoY growth (reusables)</div></div>
+        <div class="metric-card"><div class="num">3.8%</div><div class="muted">Site conversion</div></div>
+        <div class="metric-card"><div class="num">12k</div><div class="muted">Active customers</div></div>
+      </div>
+    </section>
+
+    <section class="methodology insights-section">
+      <h2>Methodology</h2>
+      <p>Data aggregated from anonymized order records, A/B tests on product pages, and a short customer survey (n=1,200). We prioritize privacy and aggregate reporting.</p>
+    </section>
+
+    <section class="insights">
+      <h2>Market Insights</h2>
+      <div class="study-list">
+        <article class="study-card" data-title="Reusable Bottle Study" data-summary="Tested bottle descriptions with 'eco' vs neutral copy" data-findings="Eco wording increased add-to-cart by 14%">
+          <h3>Reusable Bottle Study</h3>
+          <p>Hypothesis: sustainability copy improves purchase intent.</p>
+          <div style="margin-top:auto">
+            <button class="btn-ghost" data-action="view" aria-label="View details">View details</button>
+            <button class="btn-ghost" data-tooltip="Share this study">Share</button>
+          </div>
+        </article>
+
+        <article class="study-card" data-title="Packaging Waste Analysis" data-summary="Measured packaging weight across top SKUs" data-findings="Several SKUs reduced packaging by 18% without cost increase">
+          <h3>Packaging Waste Analysis</h3>
+          <p>Opportunity to reduce shipping weight and cost.</p>
+          <div style="margin-top:auto">
+            <button class="btn-ghost" data-action="view">View details</button>
+            <button class="btn-ghost" data-tooltip="Download report">Download</button>
+          </div>
+        </article>
+
+        <article class="study-card" data-title="Subscription Interest" data-summary="Surveyed interest in subscription bundles" data-findings="45% expressed interest in monthly essentials bundles">
+          <h3>Subscription Interest</h3>
+          <p>Customers value convenience and sustainable refill options.</p>
+          <div style="margin-top:auto">
+            <button class="btn-ghost" data-action="view">View details</button>
+            <button class="btn-ghost" data-tooltip="Email the team">Contact</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="charts">
+      <h2>Data Visualizations</h2>
+      <div class="chart-placeholder">[Interactive chart placeholder — integrate Chart.js or D3 here]</div>
+      <div class="chart-placeholder">[Conversion trend placeholder]</div>
+    </section>
+
+    <section class="recommendations insights-section">
+      <h2>Recommendations</h2>
+      <ul>
+        <li>Highlight sustainability features near Add-to-cart to boost conversion.</li>
+        <li>Offer starter bundles for subscription to increase lifetime value.</li>
+        <li>Reduce packaging on eligible SKUs to lower shipping costs.</li>
+      </ul>
+    </section>
+
+    <section class="subscribe-cta">
+      <button id="subscribe-cta" class="hero-cta">Subscribe for full reports</button>
+    </section>
+
+    <!-- Study details modal -->
+    <div id="study-modal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-content wide">
+        <button class="close" id="study-close">×</button>
+        <h2 id="study-title">Study title</h2>
+        <p id="study-summary"></p>
+        <p id="study-findings" style="font-weight:600"></p>
+        <div style="margin-top:12px"><button id="study-download" class="btn-ghost">Download PDF</button></div>
+      </div>
+    </div>
+
+    <!-- Subscribe modal -->
+    <div id="subscribe-modal" class="modal hidden">
+      <div class="modal-content">
+        <button class="close" id="subscribe-close">×</button>
+        <h3>Subscribe to EcoMart Research</h3>
+        <p>Get full reports and data once a month.</p>
+        <form id="subscribe-form">
+          <input id="sub-email" type="email" placeholder="you@domain.com" required />
+          <div style="margin-top:10px"><button type="submit" class="hero-cta">Subscribe</button></div>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 EcoMart — Research & Insights.</p>
+  </footer>
+
+  <script>
+    // Small interactions: study modal, subscribe modal, tooltips
+    (function(){
+      const tooltip = document.createElement('div'); tooltip.className='tooltip'; document.body.appendChild(tooltip);
+      document.querySelectorAll('[data-tooltip]').forEach(el=>{
+        el.addEventListener('mouseenter', (e)=>{
+          tooltip.textContent = el.getAttribute('data-tooltip'); tooltip.classList.add('show');
+          const r = el.getBoundingClientRect(); tooltip.style.left = (r.left + (r.width/2)) + 'px'; tooltip.style.top = (r.top - 10) + 'px';
+        });
+        el.addEventListener('mouseleave', ()=> tooltip.classList.remove('show'));
+      });
+
+      const modal = document.getElementById('study-modal');
+      document.querySelectorAll('.study-card').forEach(card=>{
+        card.querySelector('[data-action="view"]').addEventListener('click', (e)=>{
+          e.stopPropagation(); const t = card.dataset.title; const s = card.dataset.summary; const f = card.dataset.findings;
+          document.getElementById('study-title').textContent = t;
+          document.getElementById('study-summary').textContent = s;
+          document.getElementById('study-findings').textContent = 'Finding: ' + f;
+          modal.classList.remove('hidden');
+        });
+      });
+      document.getElementById('study-close').addEventListener('click', ()=> modal.classList.add('hidden'));
+
+      const subModal = document.getElementById('subscribe-modal');
+      document.getElementById('subscribe-btn').addEventListener('click', ()=> subModal.classList.remove('hidden'));
+      document.getElementById('subscribe-cta').addEventListener('click', ()=> subModal.classList.remove('hidden'));
+      document.getElementById('subscribe-close').addEventListener('click', ()=> subModal.classList.add('hidden'));
+      document.getElementById('subscribe-form').addEventListener('submit', (e)=>{ e.preventDefault(); alert('Thanks — subscription saved.'); subModal.classList.add('hidden'); });
+    })();
+  </script>
+</body>
+</html>
